@@ -9,14 +9,17 @@ from rest_framework import viewsets
 from django.contrib.auth import authenticate
 from .models import Ticket
 from .serializers import TicketSerializer
+from rest_framework import filters
 
 class TicketViewSet(viewsets.ModelViewSet):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
     queryset = Ticket.objects.all()
     serializer_class = TicketSerializer
+    filter_backends = [filters.SearchFilter]  # Add this line
+    search_fields = ['title']
 
-    
+
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
