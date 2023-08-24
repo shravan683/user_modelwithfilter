@@ -16,7 +16,7 @@ class TicketViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = Ticket.objects.all()
     serializer_class = TicketSerializer
-    filter_backends = [filters.SearchFilter]  # Add this line
+    filter_backends = [filters.SearchFilter]
     search_fields = ['title']
 
 
