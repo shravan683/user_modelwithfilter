@@ -73,3 +73,4 @@ def login_view(request):
         return Response({'token': token.key, 'message': 'Login successful'}, status=status.HTTP_200_OK)
 
     return Response({'message': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+#user model
