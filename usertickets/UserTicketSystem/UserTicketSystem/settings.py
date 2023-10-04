@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'rest_framework',
-    'rest_framework.authtoken',  
+    'rest_framework.authtoken',
+    'dbtest'  
     # 'rest_framework_simplejwt', 
 ]
 
@@ -175,6 +176,16 @@ DATABASES = {
     }
 }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbtest', 
+        'USER': 'postgres',
+        'PASSWORD': '8861779914',
+        'HOST': '127.0.0.1', 
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
